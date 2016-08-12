@@ -73,7 +73,6 @@ class GameManager: NSObject, AVAudioPlayerDelegate {
     {
         for currentBullet in bulletView
         {
-            print(bulletView.count)
             if (currentBullet.status == currentBullet.OUT || currentBullet.status == currentBullet.HIT)
             {
                 if let index = self.bulletView.indexOf(currentBullet)
@@ -82,7 +81,6 @@ class GameManager: NSObject, AVAudioPlayerDelegate {
                 }
             }
             for currentMeteor in meteView{
-                print(meteView.count)
                 if (currentMeteor.status == currentMeteor.OUT)
                 {
                     if let index = self.meteView.indexOf(currentMeteor)

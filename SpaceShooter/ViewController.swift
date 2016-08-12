@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
-
+    var timers = [NSTimer]()
+    var uiElements = [UIButton(), UIImageView(), UILabel()]
+    var powerButtons = [UIButton]()
     var Background1 = UIImageView()
     var Background2 = UIImageView()
     var timer1 : NSTimer!
@@ -40,7 +42,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var leftPress: UIButton!
     @IBOutlet weak var rightPress: UIButton!
 
-    
     @IBAction func ac_heal(sender: AnyObject) {
         checkPlayReady = false
         if (gameManager!.powerBar < 3)
@@ -55,11 +56,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         healSound.prepareToPlay()
         healSound.volume = 3
         healSound.play()
-        
-        
     }
    
-    
     @IBAction func ac_double(sender: AnyObject) {
         checkPlayReady = false
         if (gameManager!.powerBar < 3)
@@ -87,7 +85,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad()
     {
-        
         shipSound()
         shootSound()
         playSong()
@@ -96,9 +93,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.gameManager?.ship = ship
         add = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: (#selector(ViewController.addMete2)), userInfo: nil, repeats: true)
         addBul = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: (#selector(ViewController.addBullet2)), userInfo: nil, repeats: true)
-        
         self.gameManager?.addMete(self, height: Int(self.view.bounds.height))
-        
         NSTimer.scheduledTimerWithTimeInterval(1/60, target: self.gameManager!, selector: (#selector(gameManager!.updateMove)), userInfo: nil, repeats: true)
         powerCount = NSTimer.scheduledTimerWithTimeInterval(1/20, target: self, selector: (#selector(ViewController.updatePower)), userInfo: nil, repeats: true)
         healthCount = NSTimer.scheduledTimerWithTimeInterval(1/20, target: self, selector: (#selector(ViewController.hitShip)), userInfo: nil, repeats: true)
@@ -107,7 +102,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.gameManager?.bulletView.append(bullet)
         self.view.addSubview((self.gameManager?.bulletView[0])! )
         ship.layer.zPosition = 1
-        
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool){
@@ -157,12 +151,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         laserSound.volume = -1
     }
 
-
     override func viewDidAppear(animated: Bool)
     {
+   
 //background's speed and coordinates
-            Background1 = UIImageView(image: UIImage(named: "star1.jpg"))
-            Background2 = UIImageView(image: UIImage(named: "star2.jpg"))
+        Background1 = UIImageView(image: UIImage(named: "star1.jpg"))
+        Background2 = UIImageView(image: UIImage(named: "star2.jpg"))
         Background1.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         Background2.frame = CGRectMake(0, -Background1.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height)
         self.view.addSubview(Background1)
@@ -266,83 +260,61 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         laserSound.play()
     }
     
-    func hitShip(){
-        if (gameManager!.progressValue == 10){
-            img_Progress.image = UIImage(named: "healthBar")
-        }
-        if (gameManager!.progressValue == 8){
-            img_Progress.image = UIImage(named: "healthBar1")
-        }
-        if (gameManager!.progressValue == 6){
-            img_Progress.image = UIImage(named: "healthBar2")
-        }
-        if (gameManager!.progressValue == 4){
-            img_Progress.image = UIImage(named: "healthBar3")
-        }
-        if (gameManager!.progressValue == 2){
-            img_Progress.image = UIImage(named: "healthBar4")
-        }
-        if (gameManager!.progressValue == 0){
-            shipDie()
-            NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: (#selector(ViewController.gameOver)), userInfo: true, repeats: false)
-        }
+    func imageForProgress(name: String) {
+        img_Progress.image = UIImage(named: name)
     }
     
+    func hitShip(){
+        var name = ""
+        switch gameManager!.progressValue {
+        case 10:
+            name = "healthBar5"
+        case 8:
+            name = "healthBar4"
+        case 6:
+            name = "healthBar3"
+        case 4:
+            name = "healthBar2"
+        case 2:
+            name = "healthBar1"
+        case 0:
+            shipDie()
+            NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: (#selector(ViewController.gameOver)), userInfo: true, repeats: false)
+        default: print("nothing")
+        }
+        imageForProgress(name)
+    }
+
     func updatePower()
     {
-        if (gameManager?.powerBar == 0)
-        {
-            energy.image = UIImage(named: "emptyEne.png")
-        }
-        if (gameManager?.powerBar == 1)
-        {
-            energy.image = UIImage(named: "lowEne.png")
-        }
-        if (gameManager?.powerBar == 2)
-        {
-            energy.image = UIImage(named: "medEne.png")
-        }
-        if (gameManager?.powerBar == 3)
-        {
+        powerButtons = [heal, shield, missile, double]
+        for powerButton in powerButtons {
+        switch gameManager!.powerBar {
+        case 3:
             energy.image = UIImage(named: "highEne.png")
+            powerButton.enabled = true
+        case 2:
+            energy.image = UIImage(named: "medEne.png")
+        case 1:
+            energy.image = UIImage(named: "lowEne.png")
+        case 0:
+            energy.image = UIImage(named: "emptyEne.png")
+            powerButton.enabled = false
+        default: print("Sh!t")
         }
-        
-        if (gameManager?.powerBar == 0)
-        {
-            heal.setImage(UIImage(named: "heal1Grey.png"), forState: .Normal)
-            shield.setImage(UIImage(named: "shield1Grey.png"), forState: .Normal)
-            missile.setImage(UIImage(named: "missile1Grey.png"), forState: .Normal)
-            double.setImage(UIImage(named: "double1Grey.png"), forState: .Normal)
-            
-        } else if (gameManager?.powerBar == 3){
-            if (checkPlayReady == false){
-            ready()
-            heal.setImage(UIImage(named: "heal1.png"), forState: .Normal)
-            shield.setImage(UIImage(named: "shield1.png"), forState: .Normal)
-            missile.setImage(UIImage(named: "missile1.png"), forState: .Normal)
-            double.setImage(UIImage(named: "double1.png"), forState: .Normal)
-            }
-        }
+    }
 }
-
+    //MARK: END GAME METHODS
     func shipDie()
     {
-        img_Progress.hidden = true
-        healthCount.invalidate()
-        timer1.invalidate()
-        timer2.invalidate()
-        timer3.invalidate()
-        add.invalidate()
-        addBul.invalidate()
-        healthCount.invalidate()
-        leftPress.hidden = true
-        rightPress.hidden = true
-        heal.hidden = true
-        shield.hidden = true
-        missile.hidden = true
-        double.hidden = true
-        energy.hidden = true
-        gameManager?.score.hidden = true
+        timers = [timer1,timer2,timer3, add, addBul,healthCount, powerCount]
+        for timer in timers {
+            timer.invalidate()
+        }
+        uiElements = [leftPress, rightPress, heal, shield, missile, double, img_Progress, energy, (gameManager?.score)!]
+        for uiElement in uiElements {
+            uiElement.hidden = true
+        }
         backgroundMusic.stop()
         laserSound.stop()
         shipMusic.stop()
@@ -356,7 +328,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         ship.animationDuration = 0.5
         ship.animationRepeatCount = 1
         ship.startAnimating()
-
     }
     
     func gameOver()
@@ -365,5 +336,4 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         gameOver.score = gameManager!.scoreCount
         self.navigationController!.pushViewController(gameOver, animated: false)
     }
-
 }
