@@ -330,27 +330,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShooterSPL.png" id="qWN-DY-nOS">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sapceShooter.png" id="qWN-DY-nOS">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OtU-Hj-xvk">
-                                <rect key="frame" x="182" y="47" width="404" height="57"/>
+                                <rect key="frame" x="310" y="48" width="404" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.033815218139999999" green="0.7518502105" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONECTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XrW-NU-leT">
-                                <rect key="frame" x="181" y="141" width="214" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHARE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XrW-NU-leT">
+                                <rect key="frame" x="285" y="140" width="214" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.49034621879185014" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z9Z-cO-O25">
-                                <rect key="frame" x="440" y="141" width="50" height="30"/>
+                                <rect key="frame" x="663" y="139" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" backgroundImage="facebook-128.png">
@@ -358,65 +358,56 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJh-W2-vAH">
-                                <rect key="frame" x="181" y="192" width="214" height="28"/>
+                                <rect key="frame" x="285" y="189" width="214" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MUSIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JSq-23-IJr">
-                                <rect key="frame" x="181" y="242" width="214" height="28"/>
+                                <rect key="frame" x="285" y="242" width="214" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUSH NOTIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rwC-f1-j3X">
-                                <rect key="frame" x="181" y="287" width="228" height="28"/>
+                                <rect key="frame" x="285" y="287" width="228" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HINTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L0v-Cw-YYM">
-                                <rect key="frame" x="181" y="329" width="214" height="28"/>
+                                <rect key="frame" x="285" y="329" width="214" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fdN-q3-44p">
-                                <rect key="frame" x="241" y="417" width="286" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
-                                <state key="normal" title="HELP/FAQ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="I96-yP-cVS">
-                                <rect key="frame" x="492" y="189" width="51" height="31"/>
+                                <rect key="frame" x="687" y="187" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="SoundSwitch:" destination="CTh-06-zxw" eventType="valueChanged" id="rzY-FU-hbb"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6ot-uc-rZH">
-                                <rect key="frame" x="492" y="239" width="51" height="31"/>
+                                <rect key="frame" x="687" y="240" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="MusicSwitch:" destination="CTh-06-zxw" eventType="valueChanged" id="g2k-4w-6xq"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="vxs-Tk-ElF">
-                                <rect key="frame" x="492" y="326" width="51" height="31"/>
+                                <rect key="frame" x="687" y="327" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="HintSwitch:" destination="CTh-06-zxw" eventType="valueChanged" id="pY7-jz-xXR"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hF4-Uv-ASf">
-                                <rect key="frame" x="491" y="139" width="50" height="30"/>
+                                <rect key="frame" x="704" y="139" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" backgroundImage="twitter-128.png">
@@ -424,12 +415,21 @@
                                 </state>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ne8-xq-gk7">
-                                <rect key="frame" x="492" y="284" width="51" height="31"/>
+                                <rect key="frame" x="687" y="285" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="NotificationSwitch:" destination="CTh-06-zxw" eventType="valueChanged" id="KUs-ba-Wlz"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fdN-q3-44p">
+                                <rect key="frame" x="369" y="416" width="286" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.49034621880000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <state key="normal" title="HELP/FAQ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -497,7 +497,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SpaceShooterSPL.png" width="1024" height="768"/>
         <image name="beAQuitter.png" width="100" height="100"/>
         <image name="centerShip.png" width="118" height="141"/>
         <image name="double1Grey.png" width="128" height="128"/>
@@ -509,6 +508,7 @@
         <image name="leftButton.png" width="256" height="256"/>
         <image name="missile1Grey.png" width="128" height="128"/>
         <image name="rightButton.png" width="256" height="256"/>
+        <image name="sapceShooter.png" width="1024" height="768"/>
         <image name="shield1Grey.png" width="128" height="128"/>
         <image name="star1.jpg" width="800" height="400"/>
         <image name="tryAgain.png" width="100" height="100"/>
